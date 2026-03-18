@@ -1,0 +1,5 @@
+a=float(input('Valor de A: '))
+b=float(input('Valor de B: '))
+c=float(input('Valor de C: '))
+D=b**2-(4*a*c)
+print(f'Valor de delta: {D:.2f}')
