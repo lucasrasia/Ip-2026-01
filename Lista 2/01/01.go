@@ -2,5 +2,7 @@ package main
 import("fmt")
 
 func main(){
-	fmt.Println("Hello World")
+	x:=7
+	y:=9
+	fmt.Println(x>y)
 }
