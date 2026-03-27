@@ -1,7 +1,15 @@
 package main
-import ("fmt")
+import ("fmt"; "math")
 
 func main(){
-	n:=[5]int{1,2,3,4,5}
-	fmt.Println(n[2])
+	var n float64
+	fmt.Print("Númrero: ")
+	fmt.Scan(&n)
+	if n>=0 {
+		conta:= math.Sqrt(n)
+		fmt.Printf("%.2f \n", conta)
+	} else {
+		conta:= math.Pow(n, 2)
+		fmt.Println(conta)
+	}
 }
