@@ -1,9 +1,9 @@
 package main
 import("fmt")
 
+var n1 int
+var n2 int
 func main(){
-	var n1 int
-	var n2 int
 	fmt.Print("Número 1: ")
 	fmt.Scan(&n1)
 	fmt.Print("Número 2: ")
