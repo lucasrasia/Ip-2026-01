@@ -1,0 +1,23 @@
+package main
+import "fmt"
+func main() {
+    var nota [3] float64
+    var soma float64
+    for i:=0; i<3; i++ {
+        fmt.Printf("Nota %v: ", (i+1))
+        fmt.Scan(&nota[i])
+        soma+=nota[i]
+    }
+    fmt.Println("")
+    for i, := range nota {
+        fmt.Printf("Nota %v: %v \n", (i+1), v)
+        if v>=6 {
+            fmt.Println("Aprovado!")
+        } else{
+            fmt.Println("Reprovado!")
+        }
+        fmt.Println("")
+    }
+    fmt.Printf("Soma: %v \n", soma)
+    fmt.Printf("Média: %.2f \n", (soma/3))
+}
