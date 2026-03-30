@@ -9,7 +9,7 @@ func main() {
         soma+=nota[i]
     }
     fmt.Println("")
-    for i, := range nota {
+    for i, v:= range nota {
         fmt.Printf("Nota %v: %v \n", (i+1), v)
         if v>=6 {
             fmt.Println("Aprovado!")
