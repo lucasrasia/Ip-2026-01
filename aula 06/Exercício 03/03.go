@@ -7,6 +7,6 @@ func main() {
         fmt.Scan(&nota[i])
     }
     for i := range nota {
-        fmt.Printf("%v\n", nota[(9-i)])
+        fmt.Printf("%v ", nota[(9-i)])
     }
 }
