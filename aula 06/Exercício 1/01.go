@@ -1,7 +1,7 @@
 package main
 import "fmt"
 func main() {
-    var nota [3] float64
+    var nota [3] float64. //array chamado nota
     var soma float64
     for i:=0; i<3; i++ {
         fmt.Printf("Nota %v: ", (i+1))
@@ -9,7 +9,7 @@ func main() {
         soma+=nota[i]
     }
     fmt.Println("")
-    for i, v:= range nota {
+    for i, v:= range nota {   //vai ler os termos do array  "nota"
         fmt.Printf("Nota %v: %v \n", (i+1), v)
         if v>=6 {
             fmt.Println("Aprovado!")
