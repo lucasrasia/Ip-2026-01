@@ -1,10 +1,10 @@
 package main
 import "fmt"
 func fat(n int)int{
-	 if n==0 || n==1{
+	 if n==0 || n==1{  //caso base que para o loop, se não explode o pc
 		return 1
 	 }
-	 return n*fat(n-1)
+	 return n*fat(n-1)  //loop em que ele fica repetindo o fatorial até chegar em 1 (função recursiva)
 }
 func main(){
 	var n int
