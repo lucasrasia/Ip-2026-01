@@ -7,6 +7,8 @@ func main(){
 	}{
 		{"Ar condicioando", 1750},
 		{"Pintura metálica", 800},
+		{"Vidro elétrico", 1200},
+		{"Direção hidráulica", 2000},
 
 	}
 	var n float64
