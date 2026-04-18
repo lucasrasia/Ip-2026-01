@@ -1,5 +1,4 @@
 package main
-
 import "fmt"
 
 type pessoa struct {
@@ -20,12 +19,12 @@ func main() {
 		fmt.Scan(&h)
 		fmt.Print("Peso: ")
 		fmt.Scan(&p)
-		pessoaData := pessoa{
+		pe := pessoa{
 			idade:  i,
 			altura: h,
 			peso:   p,
 		}
-		ind = append(ind, pessoaData)
+		ind = append(ind, pe)
 		fmt.Print("Deseja continuar? ('s' ou 'n') ")
 		fmt.Scan(&n)
 		if n == "n" {
