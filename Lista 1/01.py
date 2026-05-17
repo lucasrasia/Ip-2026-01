@@ -1,4 +1,3 @@
- #Atividade 01: Calculo de média
 
 print('Cálculo de Média')
 nota_1=float(input('Primeira nota: '))

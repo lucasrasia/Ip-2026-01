@@ -11,7 +11,6 @@ import (
 	"projeto-teste-crud/models"
 )
 
-// ConsultaHandler concentra as dependências dos endpoints de consultas.
 type ConsultaHandler struct {
 	DB *sql.DB
 }

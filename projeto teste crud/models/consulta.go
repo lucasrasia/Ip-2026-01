@@ -2,7 +2,6 @@ package models
 
 import "time"
 
-// Consulta representa o recurso principal da API.
 type Consulta struct {
 	ID            int    `json:"id"`
 	NomePaciente  string `json:"nome_paciente"`
@@ -16,7 +15,6 @@ type Consulta struct {
 	Observacoes   string `json:"observacoes,omitempty"`
 }
 
-// ParseDate e ParseTime ajudam na validação de entrada.
 func ParseDate(date string) (time.Time, error) {
 	return time.Parse("2006-01-02", date)
 }

@@ -1,4 +1,3 @@
- #Atividade 07: Conversor de unidades
 F=float(input('Valor em Fahrenheit: '))
 P=float(input('Valor em polegada: '))
 C=(5*F-160)/9

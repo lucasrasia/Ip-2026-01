@@ -5,7 +5,6 @@ import (
 	"os"
 )
 
-// Config guarda as configurações básicas da aplicação.
 type Config struct {
 	DBHost     string
 	DBPort     string
@@ -16,7 +15,6 @@ type Config struct {
 	ServerPort string
 }
 
-// LoadConfig lê variáveis de ambiente com fallback para valores padrão.
 func LoadConfig() Config {
 	return Config{
 		DBHost:     getEnv("DB_HOST", "localhost"),
@@ -29,7 +27,6 @@ func LoadConfig() Config {
 	}
 }
 
-// DatabaseURL monta a string de conexão PostgreSQL.
 func (c Config) DatabaseURL() string {
 	return fmt.Sprintf(
 		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
