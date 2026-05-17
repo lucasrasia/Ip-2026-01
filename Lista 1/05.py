@@ -1,4 +1,3 @@
- #Atividade 05: Conta de Água
 
 conta=input('Conta: ')
 consumo=float(input( 'Consumo de água: '))

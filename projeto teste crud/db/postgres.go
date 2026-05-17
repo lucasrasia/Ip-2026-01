@@ -8,7 +8,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-// Connect abre e valida a conexão com o banco PostgreSQL.
 func Connect(databaseURL string) (*sql.DB, error) {
 	db, err := sql.Open("postgres", databaseURL)
 	if err != nil {

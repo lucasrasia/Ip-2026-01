@@ -6,7 +6,6 @@ import (
 	"projeto-teste-crud/handlers"
 )
 
-// Register configura rotas REST de consultas.
 func Register(mux *http.ServeMux, h *handlers.ConsultaHandler) {
 	mux.HandleFunc("/consultas", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {

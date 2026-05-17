@@ -1,4 +1,3 @@
- #Atividade 03: Concatenação inteira
 
 numero1=input('')
 numero2=input('')

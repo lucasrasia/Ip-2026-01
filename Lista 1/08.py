@@ -1,4 +1,3 @@
-#custo por m2 = 100 reais
 r=float(input('Raio da lata: '))
 h=float(input('Altura da lata: '))
 pi=3.14159
