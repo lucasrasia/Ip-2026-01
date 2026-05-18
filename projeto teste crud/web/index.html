@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto Teste CRUD | Consultas</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Projeto Teste CRUD</p>
+      <h1>Agendamento de Consultas</h1>
+      <p class="subtitle">Frontend minimalista para cadastrar, editar, listar e remover consultas médicas.</p>
+    </div>
+    <button class="ghost-button" id="refreshButton" type="button">Atualizar lista</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel" aria-labelledby="formTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Cadastro</p>
+        <h2 id="formTitle">Nova consulta</h2>
+      </div>
+
+      <form id="consultaForm" autocomplete="off">
+        <input type="hidden" id="consultaId">
+
+        <label>
+          Nome do paciente
+          <input id="nomePaciente" name="nome_paciente" type="text" placeholder="Ex.: Ana Souza" required>
+        </label>
+
+        <div class="grid-two">
+          <label>
+            CPF
+            <input id="cpfPaciente" name="cpf_paciente" type="text" placeholder="000.000.000-00" required>
+          </label>
+          <label>
+            Telefone
+            <input id="telefone" name="telefone" type="tel" placeholder="(00) 90000-0000">
+          </label>
+        </div>
+
+        <div class="grid-two">
+          <label>
+            Especialidade
+            <input id="especialidade" name="especialidade" type="text" placeholder="Cardiologia" required>
+          </label>
+          <label>
+            Médico(a)
+            <input id="nomeMedico" name="nome_medico" type="text" placeholder="Dra. Maria" required>
+          </label>
+        </div>
+
+        <div class="grid-three">
+          <label>
+            Data
+            <input id="dataConsulta" name="data_consulta" type="date" required>
+          </label>
+          <label>
+            Horário
+            <input id="horario" name="horario" type="time" step="1" required>
+          </label>
+          <label>
+            Status
+            <select id="status" name="status">
+              <option value="agendada">Agendada</option>
+              <option value="confirmada">Confirmada</option>
+              <option value="cancelada">Cancelada</option>
+              <option value="realizada">Realizada</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Observações
+          <textarea id="observacoes" name="observacoes" rows="3" placeholder="Informações adicionais"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="primary-button" type="submit" id="submitButton">Salvar consulta</button>
+          <button class="secondary-button" type="button" id="cancelEditButton" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel list-panel" aria-labelledby="listTitle">
+      <div class="section-heading row-heading">
+        <div>
+          <p class="eyebrow">Registros</p>
+          <h2 id="listTitle">Consultas cadastradas</h2>
+        </div>
+        <span class="counter" id="counter">0 consultas</span>
+      </div>
+
+      <div class="message" id="message" role="status" aria-live="polite"></div>
+      <div class="cards" id="consultasList"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <strong>Nenhuma consulta encontrada.</strong>
+        <span>Cadastre a primeira consulta usando o formulário.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

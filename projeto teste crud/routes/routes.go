@@ -7,6 +7,8 @@ import (
 )
 
 func Register(mux *http.ServeMux, h *handlers.ConsultaHandler) {
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("web"))))
+
 	mux.HandleFunc("/consultas", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
@@ -29,5 +31,16 @@ func Register(mux *http.ServeMux, h *handlers.ConsultaHandler) {
 		default:
 			handlers.Error(w, http.StatusMethodNotAllowed, "método não permitido")
 		}
+	})
+}
+
+func RegisterFrontend(mux *http.ServeMux) {
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/" {
+			http.NotFound(w, r)
+			return
+		}
+
+		http.ServeFile(w, r, "web/index.html")
 	})
 }

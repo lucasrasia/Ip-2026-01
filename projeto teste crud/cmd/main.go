@@ -22,6 +22,7 @@ func main() {
 	h := handlers.NewConsultaHandler(conn)
 	mux := http.NewServeMux()
 	routes.Register(mux, h)
+	routes.RegisterFrontend(mux)
 
 	addr := ":" + cfg.ServerPort
 	log.Printf("API rodando em %s", addr)
