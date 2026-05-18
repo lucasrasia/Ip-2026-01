@@ -1,6 +1,6 @@
 # Projeto Teste CRUD — Sistema de Agendamento de Consultas Médicas
 
-Este projeto implementa uma API REST simples em Go com PostgreSQL para gerenciar consultas médicas.
+Este projeto implementa uma API REST simples em Go com PostgreSQL para gerenciar consultas médicas e inclui um frontend web minimalista para usar o CRUD pelo navegador.
 
 ## Estrutura
 
@@ -12,6 +12,10 @@ projeto teste crud/
 ├── handlers/
 ├── models/
 ├── routes/
+├── web/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
 └── sql/
     ├── schema.sql
     └── seed.sql
@@ -56,6 +60,14 @@ export SERVER_PORT=8080
 go mod tidy
 go run ./cmd
 ```
+
+5. Acesse o frontend no navegador:
+
+```text
+http://localhost:8080
+```
+
+O frontend consome os endpoints REST da própria aplicação, então o PostgreSQL precisa estar configurado e a API precisa estar em execução.
 
 ## Configurando PostgreSQL
 
