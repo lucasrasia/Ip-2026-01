@@ -35,12 +35,19 @@ func Register(mux *http.ServeMux, h *handlers.ConsultaHandler) {
 }
 
 func RegisterFrontend(mux *http.ServeMux) {
+	frontendFiles := map[string]string{
+		"/":           "web/index.html",
+		"/styles.css": "web/styles.css",
+		"/app.js":     "web/app.js",
+	}
+
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/" {
+		file, ok := frontendFiles[r.URL.Path]
+		if !ok {
 			http.NotFound(w, r)
 			return
 		}
 
-		http.ServeFile(w, r, "web/index.html")
+		http.ServeFile(w, r, file)
 	})
 }
