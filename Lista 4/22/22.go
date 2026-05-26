@@ -66,6 +66,8 @@ func main(){
 					continue
 				}
 				contas[id] = saldo - saq
+				limparTerminal()
+				fmt.Println("Saque efetuado com sucesso\n")
 			} else {
 				limparTerminal()
 				fmt.Printf("Desculpe não existe uma conta com id: %v \n\n", id)
@@ -74,9 +76,17 @@ func main(){
 	} else if op==3{
 		limparTerminal()
 		for id, saldo:=range contas{
-			fmt.Println("id: %v   saldo: %v", id, saldo)
+			fmt.Printf("id: %v   saldo: %v\n", id, saldo)
 		}
+		fmt.Println()
+	} else if op==4{
+		fmt.Println("OK! Fechando sistema")
+		return
+	} else {
+		limparTerminal()
+		fmt.Println("Digíte um comando válido\n")
+		continue
 	}
 
-}
+	}
 }
