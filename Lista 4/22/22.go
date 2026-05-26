@@ -33,26 +33,25 @@ func main(){
 		var op int
 		fmt.Print("O que deseja fazer? ")
 		fmt.Scan(&op)
-		saldo, existe := contas[id] //saldo=contas[id]     existe -> bool (tem uma chave=id -> true)
 		if op==1{
 			var dep float64
 			limparTerminal()
 			fmt.Print("Digite o id da conta: ")
 			fmt.Scan(&id)
+			saldo, existe := contas[id] //saldo=contas[id]     existe -> bool (tem uma chave=id -> true)
 			if existe{
 				fmt.Printf("Digíte o valor do depósito da conta %v (saldo atual: %v): ", id, saldo )
 				fmt.Scan(&dep)
 				contas[id] = saldo + dep
 				limparTerminal()
-				fmt.Println("Depósito efetuado com sucesso")
+				fmt.Println("Depósito efetuado com sucesso\n")
 				continue
 			} else {
 				limparTerminal()
 				fmt.Printf("Desculpe não existe uma conta com id: %v \n\n", id)
 				continue
 			}
-		}
-		if op==2{
+		} else if op==2{
 			var saq float64
 			limparTerminal()
 			fmt.Print("Digite o id da conta: ")
@@ -72,6 +71,12 @@ func main(){
 				fmt.Printf("Desculpe não existe uma conta com id: %v \n\n", id)
 				continue
 		}
+	} else if op==3{
+		limparTerminal()
+		for id, saldo:=range contas{
+			fmt.Println("id: %v   saldo: %v", id, saldo)
+		}
 	}
+
 }
 }
