@@ -1,11 +1,11 @@
 package main
 import "fmt"
 func main(){
-	a:=[4]int{7, 6, 34, 11}
+	a:=[]int{6,4,7,4,9,3,6,23}
 	for i:=0; i<len(a)-1; i++{
-		for j:=0; j<len(a)-1-i; i++{
-			if a[i]>a[i+1]{
-				a[j], a[j+1]=a[j+1], a[j]
+		for j:=0; j<len(a)-1-i; j++{ //a cada passada o último termo é colocado na ordem certa
+			if a[j]>a[j+1]{
+				a[j], a[j+1]=a[j+1], a[j]  // troca simultaneamente
 			}
 		}
 	}
